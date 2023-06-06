@@ -1,9 +1,5 @@
 #this is my second version for my first component
 
-
-#this is my first version of my first component
-
-
 from tkinter import*
 
 window = Tk() #creating the window for the GUI 
