@@ -29,6 +29,14 @@ age_ent.pack()
 
 
 
+#creating buttons
+
+quitbtn = Button(window, text = "Quit", command = root.destroy) #root.destroy means the program will close
+quitbtn.pack()
+
+
+findgift_btn = Button(window, text = "Find A Gift!", command = giftfinder)
+#gift finder is just a temporary name, until I build a function which properly represents moving to the next component. 
 
 
 
