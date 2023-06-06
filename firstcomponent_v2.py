@@ -11,6 +11,10 @@ window = Tk() #creating the window for the GUI
 window.title("Giftlab") #setting the title for the GUI app 
 window.geometry("500x500") #setting the size of the window for the GUI App
 
+
+def check_entry(): 
+  print(check)
+
 #creating labels and entry boxes
 
 
