@@ -1,3 +1,5 @@
+#this is my first version of my first component
+
 
 from tkinter import*
 
@@ -42,3 +44,4 @@ findgift_btn = Button(window, text = "Find A Gift!", command = giftfinder)
 
 window.mainloop() #this makes sure that the window is created
 
+#this is the final of my first version of my first component
