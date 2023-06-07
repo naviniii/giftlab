@@ -40,7 +40,9 @@ def check_entry():
         break
         
 
-
+    else:
+        name_warning.config(text = "Please enter a name containing only letters")
+        
 
 
 #creating labels and entry boxes
