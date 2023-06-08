@@ -11,38 +11,40 @@ window.title("Giftlab") #setting the title for the GUI app
 window.geometry("500x500") #setting the size of the window for the GUI App
 
 
-
 #creating the function to check the name and age entry box:
 
 def check_entry():
     name = name_ent.get()
     age = age_ent.get()
 
-    if len(name) < 1:
-        name_warning.config(text = "Please enter a name")
-    if len(name) >= 1:
-        name_warning.config(text = "") 
 
-    if len(age)< 1:
-        age_warning.config(text = "Please enter an age")
-    if len(age) >= 1:
-        age_warning.config(text = "") 
+    #these conditions will make sure that the user is inputting something into the entry box 
+
+
 #this will give a message on the app screen for the user to enter their name and/or age
         
     #to make sure that the name entry box only contains alpha letters:
 
     while len(name)>= 1:
-        if all(name.isalpha() or name.isspace() for entry in name):
-
+        if all(name.isalpha() or name.isspace() for letter in name):
             name_warning.config(text = "")
             return True
-        
-        break
-        
+            break
+
+
+
+
+        else:
+            name_warning.config(text = "Please enter a name containing only letters")
+            name_ent.delete(0,END)
+
+            return False
+            break
+
 
     else:
-        name_warning.config(text = "Please enter a name containing only letters")
-        
+        len(name) < 1
+        name_warning.config(text = "Please enter your name")
 
 
 #creating labels and entry boxes
