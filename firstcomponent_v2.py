@@ -26,7 +26,7 @@ def check_entry():
     #to make sure that the name entry box only contains alpha letters:
 
     while len(name)>= 1:
-        if all(name.isalpha() or name.isspace() for letter in name):
+        if all(letter.isalpha() or letter.isspace() for letter in name):
             name_warning.config(text = "")
             return True
             break
