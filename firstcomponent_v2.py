@@ -61,7 +61,7 @@ def check_entry():
                 return False
 
         else:
-            len(age) < 1
+            len(age) < 16
             age_warning.config(text = "Please enter your age")
             return False
 
