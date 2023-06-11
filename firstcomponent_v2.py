@@ -47,6 +47,29 @@ def check_entry():
         name_warning.config(text = "Please enter your name")
 
 
+
+
+    try:
+        while len(age) >= 1:
+            if int(age) >= 16 and int(age) <= 18:
+                age_warning.config(text = "")
+                return True
+
+            else:
+                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
+                age_ent.delete(0,END)
+                return False
+
+        else:
+            len(age) < 1
+            age_warning.config(text = "Please enter your age")
+            return False
+
+    except ValueError:
+        age_warning.config(text = "Invalid input. Please enter a numerical value")
+        age_ent.delete(0,END)
+        return False
+
 #creating labels and entry boxes
 
 
