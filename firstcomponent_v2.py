@@ -24,58 +24,57 @@ def check_entry():
 #this will give a message on the app screen for the user to enter their name and/or age
         
     #to make sure that the name entry box only contains alpha letters:
+    
+    try:
+        while len(age) >= 1:
+            if age >= 16 and age <= 18:
+                age_warning.config(text = "")
+                return True
+            else:
+                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
+                age_ent.delete(0, END)
+                return False
+        else:
+            len(age) < 1
+            age_warning.config(text = "Please enter your age")
+            return False
+        
+    except ValueError:
+        age_warning.config(text = "Invalid Age. Please enter numerical value")
+        age_ent.delete(0,END)
+        return False
 
-    while len(name)>= 1:
+
+
+    while len(name) >=1:
         if all(letter.isalpha() or letter.isspace() for letter in name):
-            name_warning.config(text = "")
+            name_warning.config(text= "")
             return True
             break
 
-
-
-
         else:
-            name_warning.config(text = "Please enter a name containing only letters")
+            name_warning.config(text = "Invalid name. Please enter using only letters")
             name_ent.delete(0,END)
-
             return False
-            break
-
 
     else:
-        len(name) < 1
-        name_warning.config(text = "Please enter your name")
+        len(name) <1
+        name_warning.config(text = "Please enter your name: ")
 
-
-
-
-    try:
-        while len(age) >= 1:
-            if int(age) >= 16 and int(age) <= 18:
-                age_warning.config(text = "")
-                return True
-
-            else:
-                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
-                age_ent.delete(0,END)
-                return False
-
-        else:
-            len(age) < 16
-            age_warning.config(text = "Please enter your age")
-            return False
-
-    except ValueError:
-        age_warning.config(text = "Invalid input. Please enter a numerical value")
-        age_ent.delete(0,END)
         return False
+
+
+    
+
+            
+    
 
 #creating labels and entry boxes
 
 
 namelabel = Label(window, text = "Please enter your name: ") #this is the label which tells the user to enter their name
 namelabel.pack()
-#I will use the pack method for my first version
+#I will use the pack method for my first few versions
 #However, I will find a better layout manager later on in my code
 #this is to make sure that my program is aesthetically pleasing, and in the correct order 
 
