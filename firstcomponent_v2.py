@@ -13,14 +13,6 @@ window.geometry("500x500") #setting the size of the window for the GUI App
 
 #creating the function to check the name and age entry box:
 
-
-    #these conditions will make sure that the user is inputting something into the entry box 
-
-
-#this will give a message on the app screen for the user to enter their name and/or age
-        
-    #to make sure that the name entry box only contains alpha letters:
-    
 def check_name():
     name = name_ent.get()
     while len(name) >= 1:
@@ -48,11 +40,11 @@ def check_age():
     
     try:
         while len(age) >= 1:
-            if age >= 16 and age <= 18:
+            if int(age) >= 14 and int(age) <= 18:
                 age_warning.config(text = "")
                 return True
             else:
-                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
+                age_warning.config(text = "Sorry! You must be aged between 14 to 18 years old!")
                 age_ent.delete(0, END)
                 return False
         else:
