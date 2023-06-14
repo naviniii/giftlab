@@ -13,10 +13,6 @@ window.geometry("500x500") #setting the size of the window for the GUI App
 
 #creating the function to check the name and age entry box:
 
-def check_entry():
-    name = name_ent.get()
-    age = age_ent.get()
-
 
     #these conditions will make sure that the user is inputting something into the entry box 
 
@@ -25,28 +21,9 @@ def check_entry():
         
     #to make sure that the name entry box only contains alpha letters:
     
-    try:
-        while len(age) >= 1:
-            if age >= 16 and age <= 18:
-                age_warning.config(text = "")
-                return True
-            else:
-                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
-                age_ent.delete(0, END)
-                return False
-        else:
-            len(age) < 1
-            age_warning.config(text = "Please enter your age")
-            return False
-        
-    except ValueError:
-        age_warning.config(text = "Invalid Age. Please enter numerical value")
-        age_ent.delete(0,END)
-        return False
-
-
-
-    while len(name) >=1:
+def check_name():
+    name = name_ent.get()
+    while len(name) >= 1:
         if all(letter.isalpha() or letter.isspace() for letter in name):
             name_warning.config(text= "")
             return True
@@ -66,8 +43,43 @@ def check_entry():
 
     
 
-            
+
+def check_age():
     
+    try:
+        while len(age) >= 1:
+            if age >= 16 and age <= 18:
+                age_warning.config(text = "")
+                return True
+            else:
+                age_warning.config(text = "Sorry! You must be aged between 16 to 18 years old!")
+                age_ent.delete(0, END)
+                return False
+        else:
+            len(age) < 1
+            age_warning.config(text = "Please enter your age")
+            return False
+        
+    except ValueError:
+        age_warning.config(text = "Invalid Age. Please enter numerical value")
+        age_ent.delete(0,END)
+        return False
+            
+
+
+def check_entry():
+    global name
+    name = name_ent.get()
+    global age
+    age = age_ent.get()
+
+    validate_name = check_name()
+    validate_age = check_age()
+
+    if validate_age == True and validate_name == True:
+        print("Correct!")
+
+
 
 #creating labels and entry boxes
 
