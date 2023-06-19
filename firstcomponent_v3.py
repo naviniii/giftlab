@@ -74,39 +74,37 @@ def check_entry():
 
 #creating labels and entry boxes
 
+titlelabel = Label(window, text = "Giftlab", font = ("Courier",22))
+titlelabel.place(x=10,y=10)
 
-namelabel = Label(window, text = "Please enter your name: ") #this is the label which tells the user to enter their name
-namelabel.pack()
-#I will use the pack method for my first few versions
-#However, I will find a better layout manager later on in my code
-#this is to make sure that my program is aesthetically pleasing, and in the correct order 
-
+namelabel = Label(window, text = "Please enter your name: ", font = ("Arial", 22)) #this is the label which tells the user to enter their name
+namelabel.place(x = 50, y = 50)
 
 name_ent = Entry(window) #this is the entry box where the user will be able to enter their name 
-name_ent.pack()
+name_ent.place()
 
 
 agelabel = Label(window, text = "Please enter your age: ") #this is the label which tells the user to enter their age 
-agelabel.pack()
+agelabel.place()
 
 
 age_ent = Entry(window) #this is the entry box where the user will be able to enter their age
-age_ent.pack()
+age_ent.place()
 
 name_warning = Label(window, text = "")
-name_warning.pack()
+name_warning.place()
 
 age_warning = Label(window, text = "")
-age_warning.pack()
+age_warning.place()
 
 #creating buttons
 
 quitbtn = Button(window, text = "Quit", command = window.destroy) #root.destroy means the program will close
-quitbtn.pack()
+quitbtn.place()
 
 
 findgift_btn = Button(window, text = "Find A Gift!", command = check_entry)
-findgift_btn.pack()
+findgift_btn.place()
 
 
 
