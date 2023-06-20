@@ -7,7 +7,7 @@ from tkinter import messagebox #importing messagebox to indicate code is working
 window = Tk() #creating the window for the GUI 
 
 window.title("Giftlab") #setting the title for the GUI app 
-window.geometry("500x500") #setting the size of the window for the GUI App
+window.geometry("520x500") #setting the size of the window for the GUI App
 
 
 #creating the function to check the name and age entry box:
@@ -82,8 +82,11 @@ welcome_file.close()
 titlelabel = Label(window, text = "GIFTLAB", font = ("Courier",30))
 titlelabel.place(x=200,y=10)
 
-welcomelabel = Label(window, text = welcome)
-welcomelabel.place(x=10, y = 80)
+sloganlabel = Label(window, text = "Give a gift they'll never forget!", font = ("Courier", 15, "italic"))
+sloganlabel.place(x = 100, y = 50)
+
+welcomelabel = Label(window, text = welcome, font = ("Helvetica"))
+welcomelabel.place(x=10, y = 100)
 
 
                 
