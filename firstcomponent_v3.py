@@ -71,14 +71,24 @@ def check_entry():
         print("Correct!")
 
 
+#importing welcome message
+welcome_file = open("welcome_message.txt", "r", encoding = "utf-8")
+welcome = welcome_file.read()
+welcome_file.close()
+
 
 #creating labels and entry boxes
 
-titlelabel = Label(window, text = "Giftlab", font = ("Courier",22))
-titlelabel.place(x=10,y=10)
+titlelabel = Label(window, text = "GIFTLAB", font = ("Courier",30))
+titlelabel.place(x=200,y=10)
 
-namelabel = Label(window, text = "Please enter your name: ", font = ("Arial", 22)) #this is the label which tells the user to enter their name
-namelabel.place(x = 50, y = 50)
+welcomelabel = Label(window, text = welcome)
+welcomelabel.place(x=10, y = 80)
+
+
+                
+namelabel = Label(window, text = "Please enter your name: ", font = ("Helvetica", 22)) #this is the label which tells the user to enter their name
+namelabel.place(x=50, y=350)
 
 name_ent = Entry(window) #this is the entry box where the user will be able to enter their name 
 name_ent.place()
