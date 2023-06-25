@@ -54,7 +54,7 @@ friends_btn.place(x=50, y =50)
 parents_btn = Button(picker, text = "Parents", font = font_other, highlightbackground = bg_header, command = lambda: show_frame(quiz))
 parents_btn.place(x=50, y=100)
 
-quitbtn = Button(picker, text = "Quit", font = font_other, highlightbackground = bg_header, command = picker.destroy)
+quitbtn = Button(picker, text = "Quit", font = font_other, highlightbackground = bg_header, command = window.destroy)
 quitbtn.place(x=250, y=450)
 
 #creating the questions and answers lists
