@@ -37,16 +37,25 @@ show_frame(picker)
 #================= Picker Frame ================
 #setting the font and backgrounds
 
-font_picker_header = ("Courier", 30)
+font_header = ("Courier", 30)
 bg_header = "#BEE3BA"
 bg_other = "#DDF2D1"
 font_other = ("Garamond", 22)
 
 picker.configure(bg = bg_other)
 
+titlelabel = Label(picker, text = "GIFTLAB", font = font_header, bg = bg_header)
+titlelabel.place(x=200,y=10)
 
 
+friends_btn = Button(picker, text = "Friends", font = font_other, highlightbackground = bg_header, command = lambda: show_frame(quiz))
+friends_btn.place(x=50, y =50)
 
+parents_btn = Button(picker, text = "Parents", font = font_other, highlightbackground = bg_header, command = lambda: show_frame(quiz))
+parents_btn.place(x=50, y=100)
+
+quitbtn = Button(picker, text = "Quit", font = font_other, highlightbackground = bg_header, command = picker.destroy)
+quitbtn.place(x=250, y=450)
 
 #creating the questions and answers lists
 
