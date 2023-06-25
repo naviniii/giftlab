@@ -1,0 +1,5 @@
+"Question 1: \n What is your friend's favourite colour? ",
+"Question 2: \n What do they enjoy doing? ",
+"Question 3: \n What is their favourite food? ",
+"Question 4: \n On a summer day, what would they be doing? ",
+"Question 5: \n Out of these options, which sounds the most like them? "
