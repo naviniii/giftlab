@@ -4,12 +4,47 @@
 
 from tkinter import*
 
-from tkinter import messagebox
+ 
+from tkinter import messagebox as mb
 
-widnow = Tk()
+window = Tk()
 
 window.title("Giftlab")
 window.geometry("500x500")
+
+
+window.rowconfigure(0, weight = 1)
+window.columnconfigure(0,weight = 1)
+
+
+
+#creating different frames
+picker = Frame(window) #this will pick who the gift is for, as it will change the results
+quiz = Frame(window) #this will be the quiz 
+
+for frame in (picker, quiz):
+    frame.grid(row = 0, column = 0, sticky = "nsew")
+
+
+def show_frame(frame):
+    frame.tkraise()
+
+
+
+show_frame(picker)
+
+#creating the window frame picker:
+#================= Picker Frame ================
+#setting the font and backgrounds
+
+font_picker_header = ("Courier", 30)
+bg_header = "#BEE3BA"
+bg_other = "#DDF2D1"
+font_other = ("Garamond", 22)
+
+picker.configure(bg = bg_other)
+
+
 
 
 
@@ -17,22 +52,11 @@ window.geometry("500x500")
 
 #this personality quiz will have three options (a, b, c)
 #i will use radio buttons to achieve this
+#i am going to create 3 sets of questions
 
 
-q = [
-    "Question 1: \n ",
-    "Question 2: \n",
-    "Question 3: \n",
-    "Question 4: \n",
-    "Question 5: \n",
-    "Question 6: \n",
-    "Question 7: \n",
-    "Question 8: \n",
-    "Question 9: \n",
-    "Question 10: \n",
 
-    ]
 
-    
-options = [
-    "
+
+
+
