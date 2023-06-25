@@ -8,6 +8,7 @@ window = Tk() #creating the window for the GUI
 
 window.title("Giftlab") #setting the title for the GUI app 
 window.geometry("520x500") #setting the size of the window for the GUI App
+window.config(bg = "#DDF2D1")
 
 
 #creating the function to check the name and age entry box:
@@ -21,13 +22,13 @@ def check_name():
             break
 
         else:
-            name_warning.config(text = "Invalid name. Please enter using only letters")
+            name_warning.config(text = "Invalid name! Please enter using letters")
             name_ent.delete(0,END)
             return False
 
     else:
         len(name) <1
-        name_warning.config(text = "Please enter your name: ")
+        name_warning.config(text = "Please enter your name ")
 
         return False
 
@@ -43,7 +44,7 @@ def check_age():
                 age_warning.config(text = "")
                 return True
             else:
-                age_warning.config(text = "Sorry! You must be aged between 14 to 18 years old!")
+                age_warning.config(text = "Sorry! You must be 14 to 18 years old!")
                 age_ent.delete(0, END)
                 return False
         else:
@@ -52,7 +53,7 @@ def check_age():
             return False
         
     except ValueError:
-        age_warning.config(text = "Invalid Age. Please enter numerical value")
+        age_warning.config(text = "Invalid Age! Please enter numerical value")
         age_ent.delete(0,END)
         return False
             
@@ -76,48 +77,49 @@ welcome_file = open("welcome_message.txt", "r", encoding = "utf-8")
 welcome = welcome_file.read()
 welcome_file.close()
 
+backgrounds = "#BEE3BA"
 
 #creating labels and entry boxes
 
-titlelabel = Label(window, text = "GIFTLAB", font = ("Courier",30))
+titlelabel = Label(window, text = "GIFTLAB", font = ("Courier",30), bg = backgrounds)
 titlelabel.place(x=200,y=10)
 
-sloganlabel = Label(window, text = "Give a gift they'll never forget!", font = ("Courier", 15, "italic"))
-sloganlabel.place(x = 100, y = 50)
+sloganlabel = Label(window, text = "Give a gift they'll never forget!", font = ("Courier", 15, "italic"), bg = backgrounds)
+sloganlabel.place(x = 100, y = 55)
 
-welcomelabel = Label(window, text = welcome, font = ("Helvetica"))
+welcomelabel = Label(window, text = welcome, font = ("Garamond", 15), bg = "#DDF2D1")
 welcomelabel.place(x=10, y = 100)
 
 
                 
-namelabel = Label(window, text = "Please enter your name: ", font = ("Helvetica", 22)) #this is the label which tells the user to enter their name
-namelabel.place(x=50, y=350)
+namelabel = Label(window, text = "Please enter your name: ", font = ("Garamond", 22), bg = "#DDF2D1") #this is the label which tells the user to enter their name
+namelabel.place(x=25, y=270)
 
 name_ent = Entry(window) #this is the entry box where the user will be able to enter their name 
-name_ent.place()
+name_ent.place(x = 250, y = 270)
 
 
-agelabel = Label(window, text = "Please enter your age: ") #this is the label which tells the user to enter their age 
-agelabel.place()
+agelabel = Label(window, text = "Please enter your age: ", font = ("Garamond", 22), bg = "#DDF2D1") #this is the label which tells the user to enter their age 
+agelabel.place(x=25, y = 340)
 
 
 age_ent = Entry(window) #this is the entry box where the user will be able to enter their age
-age_ent.place()
+age_ent.place(x=250, y = 340)
 
-name_warning = Label(window, text = "")
-name_warning.place()
+name_warning = Label(window, text = "", font = ("Garamond", 15), bg = "#DDF2D1", fg = "red")
+name_warning.place(x=250, y = 300)
 
-age_warning = Label(window, text = "")
-age_warning.place()
+age_warning = Label(window, text = "", font = ("Garamond", 15), bg = "#DDF2D1", fg = "red")
+age_warning.place(x = 250, y = 370)
 
 #creating buttons
 
-quitbtn = Button(window, text = "Quit", command = window.destroy) #root.destroy means the program will close
-quitbtn.place()
+quitbtn = Button(window, text = "Quit", command = window.destroy, highlightbackground = backgrounds, font = ("Garamond", 22)) #root.destroy means the program will close
+quitbtn.place(x =350, y = 420)
 
 
-findgift_btn = Button(window, text = "Find A Gift!", command = check_entry)
-findgift_btn.place()
+findgift_btn = Button(window, text = "Find A Gift!", command = check_entry, highlightbackground = backgrounds, font = ("Garamond", 22))
+findgift_btn.place(x = 170, y = 420)
 
 
 
