@@ -17,7 +17,6 @@ window.rowconfigure(0, weight = 1)
 window.columnconfigure(0,weight = 1)
 
 
-
 #creating different frames
 picker = Frame(window) #this will pick who the gift is for, as it will change the results
 quiz = Frame(window) #this will be the quiz 
