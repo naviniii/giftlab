@@ -74,7 +74,7 @@ quitbtn.place(x=220, y=450)
 
 #this personality quiz will have three options (a, b, c)
 #i will use radio buttons to achieve this
-#i am going to create 3 sets of questions
+#i am going to create 2 sets of questions
 
 
 
