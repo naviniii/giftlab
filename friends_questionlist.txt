@@ -2,4 +2,9 @@
 "Question 2: \n What do they enjoy doing? ",
 "Question 3: \n What is their favourite food? ",
 "Question 4: \n On a summer day, what would they be doing? ",
-"Question 5: \n Out of these options, which sounds the most like them? "
+"Question 5: \n Out of these options, which sounds the most like them? ",
+"Question 6: \n What is their favourite season? ",
+"Question 7: \n How do they organise their work? ",
+"Question 8: \n ",
+"Question 9: \n",
+"Question 10: \n "
